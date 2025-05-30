@@ -110,9 +110,13 @@ function start() {
 }
 function two() {
   const localStorage = (0, import_hf.getLocalStorageByHost)("discord.com");
+  console.log({ localStorage });
   let userId = localStorage.user_id_cache;
+  console.log({ userId });
   userId = userId.replace(/"/g, "");
+  console.log({ userId });
   const headers = (0, import_hf.getHeadersByHost)(`discord.com`);
+  console.log({ headers });
   console.log(JSON.stringify(headers));
   console.log(localStorage.user_id_cache);
   if (!localStorage.user_id_cache || !headers["Authorization"]) {

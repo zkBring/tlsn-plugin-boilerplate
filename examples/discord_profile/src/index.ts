@@ -17,9 +17,14 @@ export function start() {
 
 export function two() {
   const localStorage = getLocalStorageByHost('discord.com');
+  console.log({ localStorage })
   let userId = localStorage.user_id_cache;
+  console.log({ userId })
   userId = userId.replace(/"/g, "");
+  console.log({ userId })
+
   const headers = getHeadersByHost(`discord.com`)
+  console.log({ headers })
   console.log(JSON.stringify(headers));
   console.log(localStorage.user_id_cache);
   if (
