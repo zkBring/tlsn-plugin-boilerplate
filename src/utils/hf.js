@@ -31,6 +31,7 @@ function getHeadersByHost(hostname) {
 }
 
 function getLocalStorageByHost(hostname) {
+  console.log('HERE!!!!!')
   const localStorage = JSON.parse(Config.get('localStorage'));
   if (!localStorage[hostname]) throw new Error(`cannot find local storage for ${hostname}`);
   return localStorage[hostname];

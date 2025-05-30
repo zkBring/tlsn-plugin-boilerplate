@@ -62,6 +62,7 @@ var require_hf = __commonJS({
       return headers[hostname];
     }
     function getLocalStorageByHost2(hostname) {
+      console.log("HERE!!!!!");
       const localStorage = JSON.parse(Config.get("localStorage"));
       if (!localStorage[hostname])
         throw new Error(`cannot find local storage for ${hostname}`);
@@ -97,10 +98,12 @@ __export(src_exports, {
 module.exports = __toCommonJS(src_exports);
 var import_hf = __toESM(require_hf());
 function isValidHost(urlString) {
+  console.log("HERE0");
   const url = new URL(urlString);
   return url.hostname === "discord.com" || url.hostname === "discord.gg";
 }
 function start() {
+  console.log("HERE1");
   if (!isValidHost(Config.get("tabUrl"))) {
     (0, import_hf.redirect)("https://discord.com/channels/@me");
     (0, import_hf.outputJSON)(false);
@@ -109,6 +112,7 @@ function start() {
   (0, import_hf.outputJSON)(true);
 }
 function two() {
+  console.log("HERE2");
   const localStorage = (0, import_hf.getLocalStorageByHost)("discord.com");
   console.log({ localStorage });
   let userId = localStorage.user_id_cache;

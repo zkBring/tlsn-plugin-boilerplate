@@ -1,11 +1,13 @@
 import { redirect, notarize, outputJSON, getLocalStorageByHost, getHeadersByHost } from '../../../src/utils/hf';
 
 function isValidHost(urlString: string) {
+  console.log('HERE0')
   const url = new URL(urlString);
   return url.hostname === 'discord.com' || url.hostname === 'discord.gg'
 }
 
 export function start() {
+  console.log('HERE1')
   if (!isValidHost(Config.get('tabUrl'))) {
     redirect('https://discord.com/channels/@me')
     outputJSON(false);
@@ -16,6 +18,7 @@ export function start() {
 
 
 export function two() {
+  console.log('HERE2')
   const localStorage = getLocalStorageByHost('discord.com');
   console.log({ localStorage })
   let userId = localStorage.user_id_cache;
