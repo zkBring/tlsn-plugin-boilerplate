@@ -75,6 +75,7 @@ export function three() {
       ...params,
       getSecretResponse: 'parseTwitterResp',
     })
+    console.log({id})
     outputJSON(id);
   }
 }

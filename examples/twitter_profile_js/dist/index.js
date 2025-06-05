@@ -62,6 +62,7 @@ var require_hf = __commonJS({
       return headers[hostname];
     }
     function getLocalStorageByHost(hostname) {
+      console.log("HERE!!!!!");
       const localStorage = JSON.parse(Config.get("localStorage"));
       if (!localStorage[hostname])
         throw new Error(`cannot find local storage for ${hostname}`);
@@ -159,6 +160,7 @@ function three() {
       ...params,
       getSecretResponse: "parseTwitterResp"
     });
+    console.log({ id });
     (0, import_hf.outputJSON)(id);
   }
 }
